@@ -31,7 +31,6 @@
   scroll-behavior: smooth;
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -39,21 +38,20 @@
   font-family: "Raleway", sans-serif;
 }
 
-
-body{
+body {
   background: var(--primary-color);
   color: white;
 }
 
-.navbar{
-  background: var(--nav-bg-color);
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-
-.sign{
-  background-color: #b535f6;
-}
-
-.bar-neon{
-  background: var(--divider-bg-color);
-}

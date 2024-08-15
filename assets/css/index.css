@@ -1,79 +1,90 @@
 @import url("./global.css");
 
-
-
-header{
-   
-    width: 100%;
+header {
+  position: relative;
+  background: linear-gradient(-45deg, #56125b, #0f0f10, #271e6e);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite alternate;
+  height: 1400px;
 }
 
-.navbar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 4rem;
-    padding: 18px 0 0 18px;
+.header::after {
+  content: "";
+  width: 100%;
+  height: 250px;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(0deg, var(--primary-color), transparent);
 }
 
-
-.nav-btn{
-    display: flex;
-    align-items: center;
-    margin-right: 12px;
-    gap: 1rem;
-    justify-content: center;
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  padding: 18px 0 0 18px;
+  background: var(--nav-bg-color);
 }
 
+.nav-btn {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+  gap: 1rem;
+  justify-content: center;
+}
 
 .nav-btn a {
-    text-decoration: none;
-    font-weight: 700;
-    letter-spacing: 0.12rem;
-    text-transform: uppercase;
-    font-size: 0.88rem;
-    color: white;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  font-size: 0.88rem;
+  color: white;
 }
 
-
-.login{
-    text-align: center;
+.login {
+  text-align: center;
 }
 
-.sign{
-    border-radius: 20px;
-    padding: 8px 26px;
-    text-align: center;
+.sign {
+  border-radius: 20px;
+  padding: 8px 26px;
+  text-align: center;
+  transition: background-color 0.9s, color 0.6s;
+  background-color: var(--tertiary-color);
 }
 
-.nav-content{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 4rem 0 0 0;
-    
+.sign:hover {
+  background: white;
+  color: black;
 }
 
-.channels{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+.nav-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 4rem 0 0 0;
 }
 
+.channels {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.header-title{
+.header-title {
   text-transform: uppercase;
   text-align: center;
   font-size: 2.5rem;
-
 }
 
-.header-title .light-text{
+.header-title .light-text {
   font-weight: 400;
   display: block;
-  margin: 2rem 0 0.25rem 0 ;
+  margin: 2rem 0 0.25rem 0;
   font-size: 1.90rem;
 }
 
@@ -82,7 +93,7 @@ header{
   width: 70%;
   max-width: 700px;
   margin: 2rem auto;
-  background-color: #fff;
+  background: var(--divider-bg-color);
   position: relative;
   overflow: hidden;
 }
@@ -96,10 +107,8 @@ header{
     90deg,
     #5516ba,
     rgba(255, 0, 229, 0.5) 80%
-);
-
-
-  animation: move   8s infinite;
+  );
+  animation: move 8s infinite;
 }
 
 @keyframes move {
@@ -113,3 +122,52 @@ header{
     left: -100%;
   }
 }
+
+.offer {
+  text-align: center;
+  font-size: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.offer-price {
+  font-weight: 700;
+}
+
+.offer-price span {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+
+.header::after {
+  content: "";
+  width: 100%;
+  height: 250px;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(0deg, var(--primary-color), transparent);
+}
+
+
+.btn-sub{
+  padding: 12px 20px;
+  background-color: var(--tertiary-color);
+  border-radius: 500px;
+  font-weight: 700;
+  color: var(--text-color);
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.10rem;
+  margin-top: 2rem;
+  background: linear-gradient(90deg,#7025D9,#3F0FA6,#410D9A,#330F76)
+
+}
+
+.shake:hover{background-color: red;}
+
