@@ -5,10 +5,11 @@ header {
   background: linear-gradient(-45deg, #56125b, #0f0f10, #271e6e);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite alternate;
-  height: 1400px;
+  height: 900px;
+  padding: 100px 0 300px;
 }
 
-.header::after {
+header::after {
   content: "";
   width: 100%;
   height: 250px;
@@ -25,6 +26,10 @@ header {
   height: 4rem;
   padding: 18px 0 0 18px;
   background: var(--nav-bg-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .nav-btn {
@@ -85,7 +90,7 @@ header {
   font-weight: 400;
   display: block;
   margin: 2rem 0 0.25rem 0;
-  font-size: 1.90rem;
+  font-size: 1.9rem;
 }
 
 .bar-neon {
@@ -99,15 +104,11 @@ header {
 }
 
 .bar-neon::before {
-  content: '';
+  content: "";
   position: absolute;
   height: 100%;
   width: 100%;
-  background: linear-gradient(
-    90deg,
-    #5516ba,
-    rgba(255, 0, 229, 0.5) 80%
-  );
+  background: linear-gradient(90deg, #5516ba, rgba(255, 0, 229, 0.5) 80%);
   animation: move 8s infinite;
 }
 
@@ -141,7 +142,6 @@ header {
   font-size: 1rem;
 }
 
-
 .header::after {
   content: "";
   width: 100%;
@@ -151,9 +151,161 @@ header {
   background: linear-gradient(0deg, var(--primary-color), transparent);
 }
 
-
-.btn-sub{
+.btn-sub {
+  position: relative;
   padding: 12px 20px;
+  border-radius: 500px;
+  font-weight: 700;
+  color: var(--text-color);
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  background: none;
+  outline: 3px solid transparent;
+  animation: shake 2s ease infinite;
+  transition: color 0.5s ease, border 1s ease;
+}
+
+.btn-sub::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 500px;
+  background: linear-gradient(90deg, #7025d9, #3f0fa6, #410d9a, #330f76);
+  background-size: 250px 100%;
+  background-position: right;
+  transition: background-position 1s ease, opacity 1s ease;
+  z-index: -1;
+}
+
+.btn-sub:hover::before {
+  background-position: left;
+  opacity: 0;
+}
+
+.btn-sub:hover {
+  color: white;
+  border: 1px solid #ff00e5;
+}
+
+.pay {
+  margin-top: 4rem;
+  font-weight: 300;
+  font-size: 0.98rem;
+  max-width: 280px;
+}
+
+#sec-sub {
+  background: url(..//images/background-movies-series.png);
+  background-size: cover;
+  width: 100%;
+}
+
+.sub-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.sec-subscription {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  gap: 4rem;
+  margin-top: 4rem;
+  border-radius: 8px;
+  perspective: 1000px;
+}
+
+.card-sub-1 {
+  border-radius: 8px;
+  height: 400px;
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 18px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  background: linear-gradient(0deg, transparent, #3b1e63);
+  height: 500px;
+  width: 500px;
+}
+
+.card-sub-2 {
+  border-radius: 8px;
+  height: 400px;
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 24px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  background: linear-gradient(0deg, transparent, #3b1e63);
+  height: 500px;
+  width: 500px;
+}
+
+.card-subtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-left {
+  margin-left: 2rem;
+  font-size: 1.8rem;
+}
+
+.price-right {
+  font-size: 1.8rem;
+  margin-right: 1rem;
+}
+
+.subscription-desc {
+  width: 100%;
+  margin: 0 auto 50px;
+  font-size: 1.25rem;
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+}
+
+.subscription-desc li::before {
+  content: "+ ";
+  margin-right: 10px;
+}
+
+.plus {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.plus::before {
+  content: "+";
+  margin-right: 8px;
+}
+
+.price {
+  color: #ff00e5;
+}
+
+.light-text {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.btn-gradient {
+  padding: 16px 40px;
   background-color: var(--tertiary-color);
   border-radius: 500px;
   font-weight: 700;
@@ -163,11 +315,174 @@ header {
   letter-spacing: 4px;
   border: none;
   cursor: pointer;
-  font-size: 1.10rem;
-  margin-top: 2rem;
-  background: linear-gradient(90deg,#7025D9,#3F0FA6,#410D9A,#330F76)
-
+  margin-bottom: 12px;
+  background: linear-gradient(90deg, #7025d9, #3f0fa6, #410d9a, #330f76);
+  background-size: 100%;
+  transition: transform 0.6s, box-shadow 0.6s;
+  position: relative;
 }
 
-.shake:hover{background-color: red;}
+.card-sub-1,
+.card-sub-2 {
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  position: relative;
+}
 
+.sec-subscription:has(.card-sub-1:hover) .card-sub-2 {
+  transform: rotateY(-35deg);
+}
+
+.sec-subscription:has(.card-sub-2:hover) .card-sub-1 {
+  transform: rotateY(35deg);
+}
+
+.card-sub-2 {
+  transform: rotateY(0deg);
+}
+
+.content-container h3 {
+  text-align: center;
+  margin: 4rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.content-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card-content {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  height: 450px;
+  overflow: hidden;
+  padding: 14px;
+}
+
+.card-default,
+.hover-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.hover-card {
+  opacity: 0;
+}
+
+.card-content:hover .hover-card {
+  opacity: 1;
+}
+
+.card-content:hover .card-default {
+  opacity: 0;
+}
+
+footer {
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.footer-info {
+  padding: 14px;
+}
+
+.footer-info a {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  color: var(--link-color);
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 0 14px;
+  letter-spacing: 2px;
+  transition: color 0.5s;
+  font-size: 0.7rem;
+}
+
+.footer-info a:hover {
+  color: white;
+  transition: color 1s;
+}
+
+footer p {
+  font-size: 0.75rem;
+  padding: 6px;
+  color: #9e86ff;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 4rem 0 3rem 0;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: auto;
+    padding: 50px 0 150px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .nav-btn {
+    flex-direction: row;
+    margin-right: 0;
+    gap: 0.5rem;
+  }
+
+  .nav-btn a {
+    font-size: 0.75rem;
+  }
+
+  .nav-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .channels {
+    flex-direction: column;
+  }
+
+  .header-title {
+    font-size: 1.5rem;
+  }
+
+  .offer {
+    font-size: 1.25rem;
+  }
+
+  .btn-sub {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+
+  .sec-subscription {
+    flex-direction: column;
+    height: auto;
+    gap: 2rem;
+  }
+
+  .card-sub-1,
+  .card-sub-2 {
+    width: 100%;
+    height: auto;
+  }
+}
